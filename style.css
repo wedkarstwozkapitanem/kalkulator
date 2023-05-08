@@ -88,3 +88,8 @@ footer {
     left:0;
     color:red;
 }
+
+#row {
+    color:rgb(6, 255, 234);
+    font-size: 48px;
+}
