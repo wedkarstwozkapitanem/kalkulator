@@ -44,7 +44,7 @@ body {
 
 #liczby button {
     margin: 2px;
-    width: 88px;
+    width: 30%;
     height: 88px;
     background: rgba(62, 60, 57, 0.145);
     cursor: pointer;
