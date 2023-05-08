@@ -13,6 +13,7 @@ function wpisz_liczbe_0() {
     liczba_o = parseFloat("" + (liczba_o) + (czescidziesite * (this.dataset.liczba)));
     ostatnialiczba.length == 0 ? document.getElementById('liczba1').innerHTML = liczba_o : document.getElementById('liczba2').innerHTML = liczba_o;
     czescidziesite !== 1 ? czescidziesite *= 10 : czescidziesite = 1;
+    document.getElementById('row').style.display = "none";
 }
 function wpisz_kropke() {
     czescidziesite /= parseInt(10);
@@ -99,6 +100,7 @@ function wpisz_znak() {
     let czyliczono = document.getElementById('dzialania1').innerHTML == " " ? true : false;
     document.getElementById('dzialania1').innerHTML = znak;
     czy_wpisana = true;
+    document.getElementById('row').style.display = "none";
     }
 }
 
