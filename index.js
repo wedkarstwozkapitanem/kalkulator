@@ -7,13 +7,15 @@ let znak;
 let czy_wpisana = false;
 let w;
 let czescidziesite = 1;
-
+let ostatniruch;
 function wpisz_liczbe_0() {
+    ostatniruch = "liczba";
     document.getElementById('tytul').innerHTML = '';
     liczba_o = parseFloat("" + (liczba_o) + (czescidziesite * (this.dataset.liczba)));
     ostatnialiczba.length == 0 ? document.getElementById('liczba1').innerHTML = liczba_o : document.getElementById('liczba2').innerHTML = liczba_o;
     czescidziesite !== 1 ? czescidziesite *= 10 : czescidziesite = 1;
     document.getElementById('row').style.display = "none";
+    aktulizacja_histori(liczba_o);
 }
 function wpisz_kropke() {
     czescidziesite /= parseInt(10);
@@ -31,6 +33,9 @@ function DEL() {
     znak = "";
     czy_wpisana = false;
     document.getElementById('row').style.display = "none";
+    nowy_wpis_histori();
+    ostatniruch = "";
+    czescidziesite = 1;
 }
 
 
@@ -78,6 +83,8 @@ function wynik() {
     document.querySelector('.okno').style.color = "silver";
     document.getElementById("wynik").style.fontSize = "68px";
     document.getElementById("wynik").style.color = "white";
+    aktulizacja_histori("=");
+    aktulizacja_histori(w);
 }
 
 
@@ -97,6 +104,8 @@ function wpisz_znak() {
     }
     liczba_o = 0;
     znak = this.dataset.znak;
+    aktulizacja_histori(znak);
+    ostatniruch = "znak";
     let czyliczono = document.getElementById('dzialania1').innerHTML == " " ? true : false;
     document.getElementById('dzialania1').innerHTML = znak;
     czy_wpisana = true;
@@ -105,6 +114,16 @@ function wpisz_znak() {
 }
 
 
+
+function nowy_wpis_histori() {
+    document.querySelector('#historia ol').appendChild(document.createElement('li'));
+}
+
+
+function aktulizacja_histori(p) {
+    let ostatniwpis = document.querySelectorAll('#historia ol li')[document.querySelectorAll('#historia ol li').length - 1];
+    ostatniwpis.innerHTML += p;
+}
 
 
 function czekaj() {
@@ -125,6 +144,7 @@ function nowe_liczby(jaka,p) {
     liczba.dataset.liczba = jaka;
     p ? liczba.addEventListener('click', wpisz_liczbe_0) : jaka == "=" ? liczba.addEventListener('click', wpisz_liczbe) : liczba.addEventListener('click', wpisz_kropke);
     liczby.appendChild(liczba); 
+    document.getElementById('row').style.display = "none";
 }
 
 
@@ -142,6 +162,8 @@ dzialania1 = okno.appendChild(document.createElement('span'));
 dzialania1.id = 'dzialania1';
 liczba2 = okno.appendChild(document.createElement('span'));
 liczba2.id = 'liczba2';
+liczba3 = okno.appendChild(document.createElement('span'));
+liczba3.id = 'liczba3';
 row = okno.appendChild(document.createElement('span'));
 row.id = 'row';
 row.innerText = "=";
@@ -175,7 +197,13 @@ symbol.forEach(dzialanie => {
     p.innerHTML = dzialanie;
 });
 
+const historia = document.querySelector('body').appendChild(document.createElement("div"));
+historia.id = "historia";
+historia.innerHTML = "<h1> Historia: </h1><hr>";
+const zapis = historia.appendChild(document.createElement("ol"));
 
+
+nowy_wpis_histori();
 }
 
 renderowanie();
