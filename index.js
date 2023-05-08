@@ -24,7 +24,7 @@ function DEL() {
     ostatnialiczba.splice(0,ostatnialiczba.length);
     document.getElementById('liczba2').innerHTML = "";
     document.getElementById('liczba1').innerHTML = "";
-    document.getElementById('wynik').innerHTML = "";
+    document.getElementById('wynik').innerHTML = 0;
     document.getElementById('dzialania1').innerHTML = "";
     liczba_o = parseFloat(0);
     znak = "";
