@@ -3,6 +3,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .kalkulator {
@@ -12,7 +13,7 @@ body {
     background-color: rgb(20, 20, 20);
     border-radius: 8px;
     box-shadow: 0 0 3px rgb(176, 174, 174);
-    margin: 48px 0px;
+    margin: 48px 10px;
     padding: 8px;
 }
 .okno {
@@ -92,4 +93,22 @@ footer {
 #row {
     color:rgb(6, 255, 234);
     font-size: 48px;
+}
+
+#historia {
+position: relative;
+min-height: 488px;
+background: rgb(255, 247, 94);
+min-width: 400px;
+max-width: 448px;
+border-radius: 28px;
+box-shadow: 0 0 2px rgb(57, 57, 57);
+font-family: cursive;
+word-wrap: break-word;
+overflow-y: auto;
+font-size: 20px;
+}
+
+h1{
+    text-align: center;
 }
