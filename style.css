@@ -1,0 +1,90 @@
+body {
+    background:black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kalkulator {
+    min-width: 100px;
+    max-width: 488px;
+    min-height: 488px;
+    background-color: rgb(20, 20, 20);
+    border-radius: 8px;
+    box-shadow: 0 0 3px rgb(176, 174, 174);
+    margin: 48px 0px;
+    padding: 8px;
+}
+.okno {
+    width: 98%;
+    min-height: 88px;
+    background: rgb(24, 25, 24);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 28px;
+    margin-top:10px;
+    box-shadow: 0 0 2px black;
+    text-align: end;
+    letter-spacing: 1px;
+    color:white;
+    font-size: 68px;
+    word-wrap: break-word;
+    padding-right: 8px;
+}
+.zadania {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#liczby {
+    margin: 4px;
+    width: 284px;
+    float: left;
+}
+
+#liczby button {
+    margin: 2px;
+    width: 88px;
+    height: 88px;
+    background: rgba(62, 60, 57, 0.145);
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 0 1px silver;
+    border:0;
+    color:white;
+    font-size: 48px;
+}
+#liczby button:hover {
+ color:rgb(250, 250, 0);
+ box-shadow: 0 0 4px rgb(255, 179, 0);
+}
+
+#dzialania {
+    margin: 10px 4px 0px 0px;
+    width: 100px;
+    float: left;
+}
+#dzialania button {
+    width: 100%;
+    height: 58px;
+    margin: 8px 0px 16px 2px;
+    background: rgb(251, 6, 6);
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 0;
+    box-shadow: 0 0 1px black;
+    border-radius: 8px;
+}
+#dzialania button:hover {
+    background: green;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left:0;
+    color:red;
+}
